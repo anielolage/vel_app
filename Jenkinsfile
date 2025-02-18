@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+
 		
 		stages {
 		
@@ -7,7 +7,7 @@ pipeline {
 			
 				steps {
 				
-				    echo "Hello World"
+				    sh "sudo yum install httpd -y"
 				
 				}
 			
@@ -17,21 +17,15 @@ pipeline {
 			
 				steps {
 				
-				    echo "Hello World two"
+				    sh "sudo service httpd start"
+					sh "sudo cp -r index.html /var/www/html"
+					sh "sudo chmod -R 777 /var/www/html"
 				
 				}
 			
 			}
 			
-			stage ("Stage-3"){
 			
-				steps {
-				
-				    echo "Hello World three"
-				
-				}
-			
-			}
 		
 		
 		}
