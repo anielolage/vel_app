@@ -1,9 +1,11 @@
 pipeline {
 
 		agent {
+		node {
 		 label "dev"
 			customWorkspace "/mnt/slave"
 		 
+		 }
 		 }
 		
 		stages {
